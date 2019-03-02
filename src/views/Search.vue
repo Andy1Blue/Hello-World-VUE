@@ -9,6 +9,7 @@
 
 <script>
 import axios from 'axios';
+import debounce from 'lodash.debounce';
 
 const API = 'https://images-api.nasa.gov/search';
 
@@ -20,7 +21,7 @@ const API = 'https://images-api.nasa.gov/search';
       };
     },
     methods: {
-      handleInput(e) {
+      handleInput: debounce(function() {
         axios.get(`${API}?q=${this.searchValue}&media_type=image`)
           .then((response) => {
             console.log(response);
@@ -28,7 +29,7 @@ const API = 'https://images-api.nasa.gov/search';
           .catch((error) => {
             console.log(error);
           });
-      },
+      }, 500),
     },
   };
 </script>
