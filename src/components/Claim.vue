@@ -14,6 +14,7 @@
 
 <style lang="scss" scoped>
   .claimWrapper {
+    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;

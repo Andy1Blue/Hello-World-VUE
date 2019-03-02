@@ -52,9 +52,6 @@ const API = 'https://images-api.nasa.gov/search';
     align-items: center;
     margin: 0;
     padding: 30px;
-    background-image: url('../assets/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 0%;
+    justify-content: center;
   }
 </style>
