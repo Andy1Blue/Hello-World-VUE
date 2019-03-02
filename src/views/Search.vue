@@ -4,6 +4,11 @@
       <label for="search">Search</label>
         <input id="search" name="search" v-model="searchValue" @input="handleInput" />
     </div>
+    <ul>
+      <li v-for="item in results" :key="item.data[0].nasa_id">
+        <p>{{ item.data[0].description }}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,13 +23,14 @@ const API = 'https://images-api.nasa.gov/search';
     data() {
       return {
           searchValue: '',
+          results: [],
       };
     },
     methods: {
       handleInput: debounce(function() {
         axios.get(`${API}?q=${this.searchValue}&media_type=image`)
           .then((response) => {
-            console.log(response);
+            this.results = response.data.collection.items;
           })
           .catch((error) => {
             console.log(error);
