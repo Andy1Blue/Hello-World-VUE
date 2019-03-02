@@ -5,7 +5,9 @@
       <router-link to="/">Spacer</router-link>
       <router-link to="/about">About</router-link>
     </div>
+    <transition name="fade">
     <router-view />
+  </transition>
     <div class="bgAuthor">
        <a href="https://www.freepik.com/free-photos-vectors/abstract">Abstract photo created by kjpargeter - www.freepik.com</a>
     </div>
@@ -25,6 +27,14 @@ import Background from '@/components/Background';
 
 <style lang="scss">
  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800');
+
+   .fade-enter-active, .fade-leave-active {
+     transition: opacity .3s ease;
+   }
+
+   .fade-enter, .fade-leave-to {
+     opacity: 0;
+   }
 
   * {
     box-sizing: border-box;

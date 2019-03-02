@@ -1,7 +1,12 @@
 <template>
   <div class="searchWrapper">
     <div class="search">
-        <input id="search" name="search" v-model="searchValue" @input="handleInput" />
+        <input
+        id="search"
+        name="search"
+        :value="value"
+        :class="{ light: light }"
+        @input="handleChange" />
     </div>
     <ul>
       <li v-for="item in results" :key="item.data[0].nasa_id">
@@ -19,22 +24,28 @@ const API = 'https://images-api.nasa.gov/search';
 
   export default {
     name: 'SearchInput',
+    props: {
+      value: {
+        type: String,
+        required: true,
+      },
+      light: {
+        type: Boolean,
+        default: false,
+      },
+    },
     data() {
       return {
-          searchValue: '',
-          results: [],
-      };
+        loading: false,
+        step: 0,
+        searchValue: '',
+        results: [],
+      }
     },
     methods: {
-      handleInput: debounce(function() {
-        axios.get(`${API}?q=${this.searchValue}&media_type=image`)
-          .then((response) => {
-            this.results = response.data.collection.items;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }, 500),
+      handleChange(e) {
+        this.$emit('input', e.target.value);
+      },
     },
   };
 </script>
@@ -68,6 +79,15 @@ const API = 'https://images-api.nasa.gov/search';
     input:focus {
       outline: none;
       box-shadow: 0 8px 10px -10px #000;
+    }
+
+    input.light {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    input.light:focus {
+      box-shadow: 0 8px 10px -10px #fff;
     }
   }
 </style>
