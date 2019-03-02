@@ -27,10 +27,15 @@
 
 <style lang="scss" scoped>
   .item {
-    min-width: 25vw;
-    height: 250px;
+    width: 25vw;
+    height: 25vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
+
+    @media (min-width: 768px) {
+      width: 20vw;
+      height: 20vw;
+    }
   }
 </style>

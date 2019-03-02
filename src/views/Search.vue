@@ -1,10 +1,13 @@
 <template>
   <div :class="[{ flexStart: step === 1 }, 'wrapper']">
+    <div class="logo" v-if="step === 1">SPACER</div>
     <Claim v-if="step === 0" />
-    <SearchInput v-model="searchValue" @input="handleInput" :light="step === 1" />
-    <div class="results" v-if="results && !loading && step === 1">
-      <Item v-for="item in results" :item="item" :key="item.data[0].nasa_id" />
+    <div v-bind:class="[step === 1 ? 'searchContainer' : '']">
+      <SearchInput v-model="searchValue" @input="handleInput" :light="step === 1" />
     </div>
+      <div class="results" v-if="results && !loading && step === 1">
+        <Item v-for="item in results" :item="item" :key="item.data[0].nasa_id" />
+      </div>
   </div>
 </template>
 
@@ -71,5 +74,24 @@ const API = 'https://images-api.nasa.gov/search';
     @media (min-width: 768px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
+  }
+
+  .searchContainer {
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    opacity: 0.5;
+  }
+
+  .logo {
+    font-size: 50px;
+    margin: 10px 0 10px 0;
+    font-weight: 600;
   }
 </style>

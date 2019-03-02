@@ -6,8 +6,8 @@
       <router-link to="/about">About</router-link>
     </div>
     <transition name="fade">
-    <router-view />
-  </transition>
+      <router-view />
+    </transition>
     <div class="bgAuthor">
        <a href="https://www.freepik.com/free-photos-vectors/abstract">Abstract photo created by kjpargeter - www.freepik.com</a>
     </div>
