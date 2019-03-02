@@ -47,9 +47,14 @@ const API = 'https://images-api.nasa.gov/search';
   .wrapper {
     display: flex;
     width: 100%;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 30px;
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 0%;
   }
 </style>

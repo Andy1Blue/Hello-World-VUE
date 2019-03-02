@@ -5,6 +5,9 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <div class="bgAuthor">
+       <a href="https://www.freepik.com/free-photos-vectors/abstract">Abstract photo created by kjpargeter - www.freepik.com</a>
+    </div>
   </div>
 </template>
 
@@ -17,5 +20,7 @@
 
   body {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
   }
 </style>

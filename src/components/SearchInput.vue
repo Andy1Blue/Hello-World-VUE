@@ -43,6 +43,7 @@ const API = 'https://images-api.nasa.gov/search';
  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600');
 
   .searchWrapper {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -51,6 +52,7 @@ const API = 'https://images-api.nasa.gov/search';
     input {
       height: 30px;
       border: 0;
+      background: none;
       border-bottom: 1px solid black;
     }
   }
