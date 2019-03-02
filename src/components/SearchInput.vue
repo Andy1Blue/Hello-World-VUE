@@ -50,10 +50,24 @@ const API = 'https://images-api.nasa.gov/search';
     align-items: center;
 
     input {
+      color: #000;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
       height: 30px;
       border: 0;
       background: none;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #000;
+      transition: box-shadow .3s ease-out;
+
+      @media (min-width: 1024px) {
+        font-weight: 400;
+      }
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 8px 10px -10px #000;
     }
   }
 </style>
