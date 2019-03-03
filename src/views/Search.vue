@@ -7,6 +7,7 @@
   <div class="results" v-if="results && !loading && step === 1">
     <Item v-for="item in results" :item="item" :key="item.data[0].nasa_id" @click.native="handleModalOpen(item)" />
   </div>
+  <div class="loader" v-if="step == 1 && loading" />
   <transition name="fade">
     <Modal v-if="modalOpen" :item="modalItem" @closeModal="modalOpen = false" />
   </transition>
@@ -124,5 +125,44 @@ export default {
 .logo a:visited {
     color: #000;
     text-decoration: none;
+}
+
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+
+    @media (min-width: 768px) {
+      width: 90px;
+      height: 90px;
+    }
+}
+
+.loader:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 6px;
+    box-sizing: border-box;
+    border: 26px solid #1c1c1c;
+    border-color: #1c1c1c transparent #1c1c1c transparent;
+    animation: loader 1.2s infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
 }
 </style>
