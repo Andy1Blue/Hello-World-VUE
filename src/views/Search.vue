@@ -30,7 +30,7 @@ export default {
     Claim,
     SearchInput,
     Item,
-    Modal
+    Modal,
   },
   data() {
     return {
@@ -68,7 +68,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s;
+    transition: opacity 0.2s;
 }
 .fade-enter,
 .fade-leave-to {
@@ -78,7 +78,7 @@ export default {
 .wrapper {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     flex-direction: column;
     align-items: center;
     margin: 0;
@@ -91,6 +91,7 @@ export default {
 }
 
 .results {
+    margin-top: 135px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -101,41 +102,29 @@ export default {
 }
 
 .searchContainer {
+    margin-top: 15px;
     width: 100%;
+    height: 100px;
     background-color: #000;
-    position: relative;
-    margin: 0 0 20px;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
     justify-content: center;
-    opacity: 0.5;
-}
-
-.logo {
-    font-size: 50px;
-    margin: 10px 0;
-    font-weight: 600;
-}
-
-.logo a:active,
-.logo a:hover,
-.logo a:link,
-.logo a:visited {
-    color: #000;
-    text-decoration: none;
+    opacity: 0.6;
 }
 
 .loader {
+    margin-top: 135px;
     display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
 
     @media (min-width: 768px) {
-      width: 90px;
-      height: 90px;
+        width: 90px;
+        height: 90px;
     }
 }
 

@@ -1,27 +1,27 @@
 <template>
-  <div class="background" />
+<div class="background" />
 </template>
 
 <script>
-  export default {
-    name: 'Background',
-  }
+export default {
+  name: 'Background',
+}
 </script>
 
 <style lang="scss" scoped>
-  .background {
+.background {
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
     z-index: -1;
-    background-image: url('../assets/bg.jpg');
+    background-image: url("../assets/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-  }
+}
 
-  .background::after {
+.background::after {
     content: '';
     background: black;
     position: absolute;
@@ -31,5 +31,5 @@
     z-index: 1;
     width: 100%;
     height: 100vh;
-  }
+}
 </style>
