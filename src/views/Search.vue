@@ -78,7 +78,7 @@ export default {
 .wrapper {
     display: flex;
     width: 100%;
-    min-height: 90vh;
+    min-height: 88vh;
     flex-direction: column;
     align-items: center;
     margin: 0;
