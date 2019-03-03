@@ -2,8 +2,8 @@
   <div id="app">
     <Background />
     <div class="nav">
-      <router-link to="/">Spacer</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link class="link" to="/">Spacer</router-link>
+      <router-link class="link" to="/about">About</router-link>
     </div>
     <transition name="fade">
       <router-view />
@@ -22,19 +22,16 @@ import Background from '@/components/Background';
     components: {
       Background,
     },
+    data() {
+      return {
+        step: 0,
+      };
+    },
   }
 </script>
 
 <style lang="scss">
  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800');
-
-   .fade-enter-active, .fade-leave-active {
-     transition: opacity .3s ease;
-   }
-
-   .fade-enter, .fade-leave-to {
-     opacity: 0;
-   }
 
   * {
     box-sizing: border-box;
@@ -44,5 +41,21 @@ import Background from '@/components/Background';
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+  }
+
+  .nav {
+    margin: 10px;
+    text-align: right;
+    color: #000;
+  }
+
+  .nav .link {
+    margin: 5px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav .link:hover {
+    box-shadow: 0 5px 5px -5px #fff;
   }
 </style>
